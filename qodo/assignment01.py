@@ -94,3 +94,17 @@ for i in range(len(allDivPts)):
     allMovedPts.append(MovedPoints)
 #output the result as f=[]
 f = th.list_to_tree(allMovedPts)   
+
+#6.- make a curve from a list of points
+#again, initialize a en empty list which will contain curves
+#interate through the list of list of points with a for loop
+#create a curve with rg.Curve.CreateInterpolatedCurve() as in 6. (see rhinocommon)
+#append that curve to the list of curves and output it to gh
+
+#make a curve from list of points
+curveList = []
+for i in range(len(allMovedPts)):
+    curve = rg.Curve.CreateInterpolatedCurve(allMovedPts[i], True)
+    curveList.append(curve)
+#output the result as g=[]
+g = curveList
